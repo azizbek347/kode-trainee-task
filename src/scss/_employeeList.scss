@@ -1,0 +1,23 @@
+.employees-list {
+  &__separator {
+    @include setTextOptions($lightContentDefaultPrimary, 15px, 20px);
+    padding: 24px 0;
+    margin: 0 4px;
+    position: relative;
+    text-align: center;
+    &:before,
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        background-color: $lightContentDefaultPrimary;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(50% - 80px);
+    }
+    &:after{
+        right: 0;
+    }
+  }
+}

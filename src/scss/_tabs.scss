@@ -1,0 +1,53 @@
+.tabs {
+  border-bottom: 1px solid $lightContentDefaultPrimary;
+  margin: 8px 0 0;
+  overflow: hidden;
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__skeleton {
+    margin: 5px 10px;
+    flex: 0 1 600px;
+  }
+  &__list-el {
+    list-style: none;
+    position: relative;
+    font-weight: 500;
+    // scroll-snap-align: center;
+    &:after {
+      content: '';
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      bottom: 0;
+      width: 100%;
+      border: 1px solid $lightContentActivePrimary;
+      transition: 0.4s opacity;
+    }
+    &:hover,
+    &:focus-within,
+    &_active {
+      color: $textPrimary;
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__tab {
+    @include setTextOptions($textTertiary, 500, 15px, 20px);
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 8px 12px;
+    transition: 0.4s;
+    white-space: nowrap;
+  }
+}

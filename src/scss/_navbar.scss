@@ -1,0 +1,8 @@
+.navbar {
+  padding: 8px 0 0;
+  margin: 0 0 16px;
+  &__title {
+    @include setTextOptions(null, 700, 24px, 28px);
+    padding: 8px 8px 12px;
+  }
+}

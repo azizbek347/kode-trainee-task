@@ -1,0 +1,6 @@
+.home {
+  min-height: 100vh;
+  &_stacked-column {
+    @include flex(column, null, null);
+  }
+}

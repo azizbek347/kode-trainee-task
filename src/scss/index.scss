@@ -1,0 +1,53 @@
+@import 'variables';
+@import 'mixins';
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  @include setTextOptions($textPrimary, 500, 12px, 20px, $fontPrimary);
+  background-color: $bgPrimary;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  padding: 0 16px;
+  &_column-centerer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@import 'skeleton';
+
+@import 'home';
+
+@import 'searchBar';
+@import 'searchError';
+@import 'popup';
+@import 'customRadio';
+
+@import 'navbar';
+@import 'tabs';
+
+@import 'employeeList';
+@import 'employeeInformation';
+
+@import 'profile';
+
+@import 'criticalError';

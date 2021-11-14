@@ -1,0 +1,10 @@
+
+.skeleton {
+  @include skeletonWrapper();
+}
+
+.skeleton::before {
+  @include skeletonBody();
+}
+
+@include skeletonAnimation();

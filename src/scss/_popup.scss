@@ -1,0 +1,52 @@
+.overlay {
+  @include flex(null, center, center);
+  @include overlay();
+  position: fixed;
+  padding: 0 15px;
+  background-color: rgba($textPrimary, 0.16);
+}
+.popup {
+  @include setTextOptions(null, 16px, 20px);
+  max-width: 370px;
+  width: 100%;
+  background-color: $bgPrimary;
+  padding: 24px 16px 8px;
+  border-radius: 24px;
+  position: relative;
+  &__title {
+    @include setTextOptions(null, 600, 20px, 24px);
+    margin: 0 0 16px;
+    text-align: center;
+  }
+  &__close {
+    @include setTextOptions(
+      $lightContentDefaultPrimary,
+      24px,
+      24px,
+      $fontPrimary
+    );
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    border: 0;
+    background-color: $bgSecondary;
+    cursor: pointer;
+    span {
+      display: block;
+      transform: translate(0, -1px);
+    }
+    &:focus {
+      outline: 1px solid $lightContentDefaultPrimary;
+    }
+  }
+  &__option {
+    padding: 19px 0 21px;
+    &:focus-within {
+      outline: 1px solid $lightContentDefaultPrimary;
+    }
+  }
+}

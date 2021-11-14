@@ -1,0 +1,56 @@
+.employee-information {
+  color: unset;
+  text-decoration: none;
+  display: block;
+  &:focus{
+    outline: 1px solid $lightContentDefaultPrimary;
+  }
+  &:not(:last-child) {
+    margin: 0 0 4px;
+  }
+  &__inner {
+    @include flex(null, space-between, null);
+  }
+  &__content {
+    &_left {
+      display: flex;
+    }
+    &_right {
+      padding: 28px 4px 32px 0;
+    }
+  }
+
+  &__avatar {
+    @include imageWithFixedAspectRatio(72px, 50%);
+    width: 72px;
+    & > * {
+      @include imageWithFixedAspectRatio(72px, 50%);
+      margin: 4px 0;
+      width: 72px;
+    }
+  }
+  &__main {
+    margin: 0 0 0 16px;
+    padding: 20px 0 21px;
+  }
+  &__title {
+    @include setTextOptions(null, 16px, 20px);
+    min-width: 144px;
+    min-height: 20px;
+    margin: 0 0 3px;
+    span {
+      @include setTextOptions($textTertiary, 14px, 18px);
+      margin: 0 0 0 4px;
+      text-transform: lowercase;
+    }
+  }
+  &__subtitle {
+    @include setTextOptions($textsSecondary, 400, 13px, 16px);
+    display: inline-block;
+    min-width: 80px;
+    min-height: 16px;
+  }
+  &__age {
+    @include setTextOptions($textsSecondary, 400, 15px, 20px);
+  }
+}

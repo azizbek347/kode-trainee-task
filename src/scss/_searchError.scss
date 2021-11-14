@@ -1,0 +1,17 @@
+.search-error {
+  @include flex(null, center, center);
+  flex: 1 0 auto;
+  &__inner {
+    @include flex(column, null, center);
+  }
+  &__icon {
+    @include imageWithFixedAspectRatio(56px);
+  }
+  &__response {
+    @include setTextOptions(null, 600, 17px, 22px);
+    margin: 8px 0 12px;
+  }
+  &__advice {
+    @include setTextOptions($textTertiary, 400, 16px, 20px);
+  }
+}

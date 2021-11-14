@@ -1,0 +1,82 @@
+@mixin setTextOptions($color: $textPrimary, $font...) {
+  color: $color;
+  $isFirstFontWeight: index($fontList, nth($font, 1));
+  @if $isFirstFontWeight {
+    font-weight: nth($font, 1);
+    font-size: nth($font, 2);
+    line-height: nth($font, 3);
+    @if length($font) == 4 {
+      font-family: nth($font, 4);
+    }
+  } @else {
+    font-size: nth($font, 1);
+    line-height: nth($font, 2);
+    @if length($font) == 3 {
+      font-family: nth($font, 3);
+    }
+  }
+}
+
+@mixin imageWithFixedAspectRatio($maxWidth, $borderRadius: 0) {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  max-width: $maxWidth;
+  border-radius: $borderRadius !important;
+}
+
+@mixin flex($direction, $justifyContent, $alignItems) {
+  display: flex;
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+  @if $alignItems != null {
+    align-items: $alignItems;
+  }
+  @if $justifyContent != null {
+    justify-content: $justifyContent;
+  }
+}
+
+@mixin placeInCenter() {
+  @include flex(null, center, center);
+}
+
+@mixin overlay() {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin skeletonWrapper() {
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+  font-size: 0;
+  background-color: $lightContentDefaultSecondary;
+  border-radius: 5px;
+}
+
+@mixin skeletonBody {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: $skeletonImage;
+  animation: loading 2s infinite;
+}
+
+@mixin skeletonAnimation() {
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

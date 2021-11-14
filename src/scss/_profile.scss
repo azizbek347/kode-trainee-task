@@ -1,0 +1,69 @@
+.profile {
+  &__nav-bar {
+    padding: 12px 0 0;
+    background-color: $bgSecondary;
+    &-link {
+      display: inline-block;
+      line-height: 0;
+      margin: 10px 0 14px 8px;
+      &:focus {
+        outline: 1px solid $lightContentDefaultPrimary;
+      }
+    }
+  }
+  &__header {
+    background-color: $bgSecondary;
+    padding: 12px 0 24px;
+  }
+  &__header-img {
+    @include imageWithFixedAspectRatio(104px, 50%);
+  }
+  &__header-info {
+    margin: 24px 0 0;
+    text-align: center;
+  }
+  &__header-info-name {
+    strong {
+      @include setTextOptions(null, 700, 24px, 28px);
+    }
+    span {
+      @include setTextOptions($textTertiary, 17px, 22px);
+      margin: 0 0 0 4px;
+      text-transform: lowercase;
+    }
+  }
+  &__header-info-department {
+    @include setTextOptions($textsSecondary, 13px, 16px);
+    margin: 12px 0 0;
+  }
+  &__details {
+    margin: 8px 0 0;
+  }
+  &__details-card {
+    @include flex(null, space-between, null);
+    @include setTextOptions($textsSecondary, 500, 16px, 20px);
+    &:not(:last-child) {
+      margin: 0 0 6px;
+    }
+  }
+  &__details-card-title {
+    @include flex(null, null, center);
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    padding: 17px 0 19px;
+    &:focus {
+      outline: 1px solid $lightContentDefaultPrimary;
+    }
+    img {
+      line-height: 0;
+      width: 24px;
+      height: 24px;
+      margin: 0 12px 0 0;
+    }
+  }
+  &__main-card-age {
+    color: $textTertiary;
+    padding: 18px 0 22px;
+  }
+}

@@ -1,0 +1,58 @@
+.search-bar {
+  &__inner {
+    display: flex;
+    background-color: $bgSecondary;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0 14px;
+  }
+  &__label {
+    @include flex(null, null, center);
+    flex: 1 0 auto;
+    &_disabled {
+      cursor: not-allowed;
+    }
+  }
+  &__icon {
+    @include imageWithFixedAspectRatio(20px);
+  }
+  &__input {
+    @include setTextOptions(
+      $lightContentDefaultPrimary,
+      15px,
+      20px,
+      $fontPrimary
+    );
+    flex: 1 0 auto;
+    border: 0;
+    padding: 10px 0;
+    margin: 0 10px;
+    background-color: transparent;
+    outline: none;
+    &::placeholder {
+      @include setTextOptions(
+        $lightContentDefaultPrimary,
+        15px,
+        20px,
+        $fontPrimary
+      );
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  &__filter {
+    border: 0;
+    background-color: transparent;
+    flex: 0 0 30px;
+    cursor: pointer;
+    padding: 8px 5px;
+    align-self: center;
+    &:disabled {
+      cursor: not-allowed;
+    }
+    &:focus{
+      outline: 1px solid $lightContentDefaultPrimary;
+    }
+  }
+}
